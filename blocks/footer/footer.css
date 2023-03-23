@@ -3,9 +3,15 @@
     margin: 67px auto 60px;
     display: flex;
 }
-@media screen and (max-width:599px) {
+@media screen and (max-width: 880px){
+    .footer{
+        max-width: 579px;
+    }
+}
+@media screen and (max-width: 599px){
     .footer{
         max-width: 282px;
+        line-height: 17px;
         margin: 48px auto 36px;
     }
 }

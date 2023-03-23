@@ -1,7 +1,7 @@
 .profile__button-add{
     background-image: url(../../../images/plus.png);
     background-repeat: no-repeat;
-    background-color: rgba(0,0,0,1);
+    background-color: transparent;
     background-position: center;
     cursor: pointer;
     width: 150px;
@@ -9,13 +9,16 @@
     border: 2px solid rgba(255, 255, 255, 1);
     opacity: 1;
     transition: opacity 0.3s linear;
+    border-radius: 2px;
 }
 .profile__button-add:hover{
     opacity: 0.6;
 }
-@media screen and (max-width:599px) {
+@media screen and (max-width:680px) {
     .profile__button-add{
         width: 282px;
-        margin-top: 22px;
+        margin-top: 17px;
+        background-size: 16px 16px;
+        background-position: 132px;
     }
 }
