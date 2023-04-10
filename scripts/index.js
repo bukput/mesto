@@ -29,8 +29,8 @@ function openPopup(popup){
 
  buttonPopupOpen.addEventListener('click', () =>{
   openPopup(popupProfileBox);
-  nameInput.value = '';
-  jobInput.value = '';
+  nameInput.value = profileName.textContent;
+  jobInput.value = profileJob.textContent;
 })
 
 const buttonAdd = document.querySelector('.profile__button-add');
