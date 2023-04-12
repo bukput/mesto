@@ -5,6 +5,7 @@
     background-image: url(../../../images/Close__Icon.png);
     background-size: 32px 32px;
     position: absolute;
+    background-repeat: no-repeat;
     right: -40px;
     top: -40px;
     border: 0;
