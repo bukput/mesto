@@ -63,7 +63,6 @@ imgAddOpenButton.addEventListener('click', () =>{
   openPopup(popupAddImgBox);
 });
 
-/***создать карточку***/
 function createCard(item) {
   const htmlElement = itemTemplate.cloneNode(true);
   const cardImage = htmlElement.querySelector('.element__image');
@@ -75,17 +74,16 @@ function createCard(item) {
   cardImage.alt = item.name;
   imageText.textContent = item.name;
 
-/***удалить карточку***/
   cardDelete.addEventListener('click', function () {
     const deleteItem = cardDelete.closest('.element');
     deleteItem.remove();
   });
-/***лайк***/
+
   cardLike.addEventListener('click', function (event) {
     const like = event.target.closest('.element__button');
     like.classList.toggle('element__button-active');
   });
-/***увеличить картинку***/
+
   cardImage.addEventListener('click', function (event) {
     openPopup(popupFullScreenBox);
     elementFullScreenImg.src = cardImage.src;
@@ -95,13 +93,13 @@ function createCard(item) {
   return htmlElement;
 };
 
-/***перебор массива***/
+
 initialCards.forEach(function (item) {
   const elementCreate = createCard(item);
   elements.prepend(elementCreate);
 });
 
- /***добавить карточку***/
+ 
 const imgAddForm = document.querySelector('.popup__form_img');
 
 imgAddForm.addEventListener('submit',(event)=>{
@@ -120,7 +118,7 @@ fullScreenCloseButton.addEventListener('click',() =>{
   closePopup(popupFullScreenBox);
  })
 
-/***закрыть кликом на оверлей***/
+
 function handleOverlayClick(evt) {
   if (evt.target.classList.contains('popup')) {
     closePopup(evt.target);
@@ -131,7 +129,6 @@ popupProfileBox.addEventListener('mousedown', handleOverlayClick);
 popupAddImgBox.addEventListener('mousedown', handleOverlayClick);
 popupFullScreenBox.addEventListener('mousedown', handleOverlayClick);
 
-/***закрыть кликом на Esc***/
 function handleEscape(evt) {
   if (evt.key === 'Escape') {
     closePopup(document.querySelector('.popup_opened'));
