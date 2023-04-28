@@ -7,35 +7,34 @@ const profileForm = document.querySelector('.popup__form_profile');
 const profileName = document.querySelector('.profile__name');
 const profileJob = document.querySelector('.profile__job');
 
-
-function openPopup(popup){
+function openPopup(popup) {
   popup.classList.add('popup_opened');
   document.addEventListener('keydown', handleEscape);
 }
 
- function closePopup(popup){
+function closePopup(popup) {
   popup.classList.remove('popup_opened');
   document.removeEventListener('keydown', handleEscape);
- }
+}
 
- function disabledSubmitButton(popup) {
+function disabledSubmitButton(popup) {
   const button = popup.querySelector(".popup__submit");
   button.classList.add("popup__submit_disabled");
   button.setAttribute("disabled", true);
 }
- profileCloseButton.addEventListener('click',() =>{
+profileCloseButton.addEventListener('click', () => {
   closePopup(popupProfileBox);
- });
+});
 
-profileForm.addEventListener('submit',(event)=>{
+profileForm.addEventListener('submit', (event) => {
   event.preventDefault();
   profileName.textContent = nameInput.value;
   profileJob.textContent = jobInput.value;
   disabledSubmitButton(popupProfileBox);
   closePopup(popupProfileBox);
- })
+})
 
-profileOpenButton.addEventListener('click', () =>{
+profileOpenButton.addEventListener('click', () => {
   openPopup(popupProfileBox);
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
@@ -45,21 +44,20 @@ const imgAddOpenButton = document.querySelector('.profile__button-add');
 const popupAddImgBox = document.querySelector('.popup_img');
 const imgAddCloseButton = document.querySelector('.popup__close_img');
 
-imgAddCloseButton.addEventListener('click',() =>{
+imgAddCloseButton.addEventListener('click', () => {
   closePopup(popupAddImgBox);
- });
+});
 
 const nameInputAdd = document.querySelector('.popup__input_type_text');
 const linkInputAdd = document.querySelector('.popup__input_type_link');
 const itemTemplate = document.querySelector('.template').content;
 const elements = document.querySelector('.elements');
-
 const popupFullScreenBox = document.querySelector('.popup-fullScreen');
 const fullScreenCloseButton = document.querySelector('.popup-fullScreen__close');
 const elementFullScreenImg = document.querySelector('.popup-fullScreen__img');
 const elementFullScreenCaption = document.querySelector('.popup-fullScreen__caption');
 
-imgAddOpenButton.addEventListener('click', () =>{
+imgAddOpenButton.addEventListener('click', () => {
   openPopup(popupAddImgBox);
 });
 
@@ -93,16 +91,14 @@ function createCard(item) {
   return htmlElement;
 };
 
-
 initialCards.forEach(function (item) {
   const elementCreate = createCard(item);
   elements.prepend(elementCreate);
 });
 
- 
 const imgAddForm = document.querySelector('.popup__form_img');
 
-imgAddForm.addEventListener('submit',(event)=>{
+imgAddForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const elementAddNew = {
     name: nameInputAdd.value,
@@ -112,12 +108,11 @@ imgAddForm.addEventListener('submit',(event)=>{
   imgAddForm.reset();
   disabledSubmitButton(popupAddImgBox);
   closePopup(popupAddImgBox);
- })
+})
 
-fullScreenCloseButton.addEventListener('click',() =>{
+fullScreenCloseButton.addEventListener('click', () => {
   closePopup(popupFullScreenBox);
- })
-
+})
 
 function handleOverlayClick(evt) {
   if (evt.target.classList.contains('popup')) {
