@@ -26,7 +26,7 @@ export default class Card{
 
   getCard () {
     this._element = this._getCardTemplate();
-    this._elementCard = this._element.querySelector('.element__img');
+    this._elementCard = this._element.querySelector('.element__image');
     this._elementCard.src = this._link;
     this._elementCard.alt = this._name;
     this._element.querySelector('.element__name').textContent = this._name;
