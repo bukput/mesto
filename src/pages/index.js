@@ -29,17 +29,17 @@ import {
 
 let userId = 0;
 
-const api = new Api({
-  url: 'https://mesto.nomoreparties.co/v1/cohort-68',
-  headers: {
-    authorization: 'b9d2ac92-8821-43d1-854c-dc058b304751',
-    'Content-Type': 'application/json'
-  }
-  .then(res => res.json())
-  .then((res) => {
-    console.log(res);
+
+  fetch('https://mesto.nomoreparties.co/v1/cohort-68',{
+	headers: {
+	  authorization: 'b9d2ac92-8821-43d1-854c-dc058b304751'
+	}
   })
-})
+	.then(res => res.json())
+	.then((result) => {
+	  console.log(result);
+	}); 
+
 
 Promise.all([ api.getDataUser(), api.getInitialsCards()])
   .then(([data, cards]) => {
