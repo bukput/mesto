@@ -36,8 +36,8 @@ const api = new Api({
     'Content-Type': 'application/json'
   }
   .then(res => res.json())
-  .then((result) => {
-    console.log(result);
+  .then((res) => {
+    console.log(res);
   })
 })
 
