@@ -35,6 +35,10 @@ const api = new Api({
     authorization: 'b9d2ac92-8821-43d1-854c-dc058b304751',
     'Content-Type': 'application/json'
   }
+  .then(res => res.json())
+  .then((result) => {
+    console.log(result);
+  })
 })
 
 Promise.all([ api.getDataUser(), api.getInitialsCards()])
