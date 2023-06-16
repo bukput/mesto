@@ -10,15 +10,19 @@
         <img class="header__logo" src="<%=require('./images/mesto.svg')%>" alt="лого">
     </header>
     <main class="content">
-        <section class="profile">
-            <img class="profile__avatar" src="<%=require('./images/image.jpg')%>" alt="аватар">
-            <div class="profile__info">
-                <div class="profile__title">
-                    <button type="button" class="profile__popup"></button>
-                </div>
-            </div>
-            <button type="button" class="profile__button-add"></button>
-        </section>
+      <section class="profile">
+        <button class="profile__edit-avatar">
+          <img src="#" alt="аватарка" class="profile__avatar">
+        </button>
+        <div class="profile__item">
+          <div class="profile__title">
+            <h1 class="profile__name"></h1>
+            <button type="button" class="profile__popup"></button>
+          </div>
+          <p class="profile__job"></p>
+        </div>
+        <button type="button" class="profile__button-add"></button>
+      </section>
         <section class="elements">
         </section>
     </main>
